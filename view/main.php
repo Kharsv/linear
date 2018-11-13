@@ -9,10 +9,18 @@ Your browser does not support the HTML5 canvas tag.
 </canvas>
 
 <div>
+  Точка начала отрезка
   <label>X:</label>
-  <input type="number" id="x" />
+  <input type="number" id="x1" />
   <label>Y:</label>
-  <input type="number" id="y" />
+  <input type="number" id="y1" />
+  <br>
+  Точка конца отрезка
+  <label>X:</label>
+  <input type="number" id="x2" />
+  <label>Y:</label>
+  <input type="number" id="y2" />
+  <br>
   <button id="add">Add</button>
   <button id="update">Update</button>
 </div>

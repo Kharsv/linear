@@ -1,11 +1,15 @@
 var points = [];
 var X1;
 var Y1;
+var X2;
+var Y2;
 
 $(document).ready(() => {
     $('#add').on('click', () => {
-      var xVal = $('#x').val();
-      var yVal = $('#y').val();
+      var xVal = $('#x1').val();
+      var yVal = $('#y1').val();
+      var x2Val = $('#x2').val();
+      var y2Val = $('#y2').val();
     
       if(xVal && yVal) {
         points.push({
@@ -13,7 +17,7 @@ $(document).ready(() => {
           y: yVal
         });
         
-        $('#points').append('<div>(' + xVal + ', ' + yVal + ')</div>');
+        $('#points').append('<div>Отрезок(' + xVal + ', ' + yVal + ')(' + x2Val + ', ' + y2Val + ')</div>');
       }
     });
     
@@ -26,18 +30,41 @@ $(document).ready(() => {
         success: (data) => {
             
           //update stuff with the results or something
-            
-
-            ctx.moveTo(300+ nx1,300 + ny1);
-            ctx.lineTo(400,400);
+  
         }
       });
+      var X1 = $('#x1').val();
+      var Y1 = $('#y1').val();
+      var X2 = $('#x2').val();
+      var Y2 = $('#y2').val();
+
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+   
+
+      var nx1 = 1 * X1;
+      var ny1 = 1 * Y1;
+      var mx1 = 1 * X2;
+      var my1 = 1 * Y2;
+      
+      ctx.moveTo( 200 + nx1,500 - ny1);
+      ctx.lineTo( 200 + mx1,500 - my1);
+
+
+      ctx.stroke();
+
+
+
+
     });
 });
 
+
+
+
 $(document).ready(function () {
    
-    
+ 
     
 // Рисование на холсте 
 var c = document.getElementById("myCanvas");
@@ -65,13 +92,7 @@ var ctx = c.getContext("2d");
 ctx.font = "30px Arial";
 ctx.fillText("y", 200, 200);
 
-var nx1 = 100 + X1;
-var ny1 = 200 + Y1;
-var mx1 = -250;
-var my1 = -250;
 
-ctx.moveTo(300+ nx1,300 + ny1);
-ctx.lineTo(400,400);
 
 
 ctx.stroke();
