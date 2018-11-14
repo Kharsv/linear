@@ -47,9 +47,11 @@ $(document).ready(() => {
       var mx1 = 1 * X2;
       var my1 = 1 * Y2;
       
+      
+     
       ctx.moveTo( 200 + nx1,500 - ny1);
       ctx.lineTo( 200 + mx1,500 - my1);
-
+  
 
       ctx.stroke();
 
@@ -97,6 +99,7 @@ ctx.fillText("y", 200, 200);
 
 ctx.stroke();
   
+
 
 
 // Взято с чата для айякс запросов
